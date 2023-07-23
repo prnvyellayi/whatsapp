@@ -1,4 +1,5 @@
 var axios = require("axios");
+require('dotenv').config();
 
 const data = {
     "messaging_product": "whatsapp", 
@@ -14,7 +15,7 @@ var options = {
     method: 'POST',
     url: 'https://graph.facebook.com/v17.0/101588133027048/messages',
     headers: {
-        'Authorization': 'Bearer EAACpOEfZBjB8BABRgkOgJK05ZAC8YDIszhDhI7dk67uZC5bFmZBAPZCnZCvSWZB54yPyMzPpnJNcKan0gBcGawKKEZCX2ZAeYyjEKICXh6EOm8yGPYjc3SicD6gQxCJ2dEpNwiSLKpLGPfPSH24TG60bq97AuZBql2p3bjQYnXU7rFUEzrNpwIADiBuTDvxEZB5XyDLVTrU25iBeAZDZD',
+        'Authorization': `Bearer ${process.env.WHATSAPP_API_KEY}`,
         'Content-Type': 'application/json'
     },
     data: data
